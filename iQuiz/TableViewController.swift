@@ -52,17 +52,14 @@ class TableViewController: UITableViewController {
     @IBAction func settingsButton(_ sender: Any) {
         let settingsAlert = UIAlertController(title: "Settings", message: "Settings go here.", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            // ...
         }
         settingsAlert.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "OK", style: .default) { action in
-            // ...
         }
         settingsAlert.addAction(OKAction)
         
         self.present(settingsAlert, animated: true) {
-            // ...
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
