@@ -19,3 +19,32 @@ class Subject {
         self.description = description
     }
 }
+
+class Node {
+    var question: String
+    var next: Node?
+    var wrong1: String
+    var wrong2: String
+    var wrong3: String
+    var correct: String
+    
+    init(_ question: String,_ wrong1: String,_ wrong2: String,_ wrong3: String,_ correct: String) {
+        self.question = question
+        self.wrong1 = wrong1
+        self.wrong2 = wrong2
+        self.wrong3 = wrong3
+        self.correct = correct
+    }
+    init(_ question: String,_ wrong1: String,_ wrong2: String,_ wrong3: String,_ correct: String,_ next: Node) {
+        self.question = question
+        self.wrong1 = wrong1
+        self.wrong2 = wrong2
+        self.wrong3 = wrong3
+        self.correct = correct
+        self.next = next
+    }
+}
+
+//class Mathematics {
+ //   var questions:Node
+//}

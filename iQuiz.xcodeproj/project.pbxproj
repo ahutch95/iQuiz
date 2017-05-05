@@ -17,6 +17,8 @@
 		401135FB1EB6EFBF004A1B36 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401135F91EB6EF9B004A1B36 /* SubjectTableViewCell.swift */; };
 		401135FD1EB6F3F4004A1B36 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401135FC1EB6F3F4004A1B36 /* Subject.swift */; };
 		401135FF1EB6F53B004A1B36 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401135FE1EB6F53B004A1B36 /* TableViewController.swift */; };
+		40625D7D1EBD34A400AC704C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40625D7C1EBD34A400AC704C /* QuestionViewController.swift */; };
+		40625D7F1EBD3E1F00AC704C /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40625D7E1EBD3E1F00AC704C /* AnswerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		401135F91EB6EF9B004A1B36 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		401135FC1EB6F3F4004A1B36 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		401135FE1EB6F53B004A1B36 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		40625D7C1EBD34A400AC704C /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		40625D7E1EBD3E1F00AC704C /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				401135FE1EB6F53B004A1B36 /* TableViewController.swift */,
 				401135FC1EB6F3F4004A1B36 /* Subject.swift */,
 				401135F91EB6EF9B004A1B36 /* SubjectTableViewCell.swift */,
+				40625D7C1EBD34A400AC704C /* QuestionViewController.swift */,
+				40625D7E1EBD3E1F00AC704C /* AnswerViewController.swift */,
 				401135CF1EB6ED20004A1B36 /* Main.storyboard */,
 				401135D21EB6ED20004A1B36 /* Assets.xcassets */,
 				401135D41EB6ED20004A1B36 /* LaunchScreen.storyboard */,
@@ -202,6 +208,7 @@
 				TargetAttributes = {
 					401135C71EB6ED20004A1B36 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					401135DB1EB6ED21004A1B36 = {
@@ -269,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				401135FD1EB6F3F4004A1B36 /* Subject.swift in Sources */,
+				40625D7F1EBD3E1F00AC704C /* AnswerViewController.swift in Sources */,
 				401135CE1EB6ED20004A1B36 /* ViewController.swift in Sources */,
+				40625D7D1EBD34A400AC704C /* QuestionViewController.swift in Sources */,
 				401135FB1EB6EFBF004A1B36 /* SubjectTableViewCell.swift in Sources */,
 				401135FF1EB6F53B004A1B36 /* TableViewController.swift in Sources */,
 				401135CC1EB6ED20004A1B36 /* AppDelegate.swift in Sources */,
@@ -424,10 +433,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahutch95.iQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -436,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahutch95.iQuiz;
@@ -517,6 +529,7 @@
 				401135F21EB6ED21004A1B36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		401135F31EB6ED21004A1B36 /* Build configuration list for PBXNativeTarget "iQuizTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +538,7 @@
 				401135F51EB6ED21004A1B36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		401135F61EB6ED21004A1B36 /* Build configuration list for PBXNativeTarget "iQuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +547,7 @@
 				401135F81EB6ED21004A1B36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

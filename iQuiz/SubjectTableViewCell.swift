@@ -13,6 +13,7 @@ class SubjectTableViewCell: UITableViewCell {
     @IBOutlet weak var subjectTitle: UILabel!
     @IBOutlet weak var subjectImage: UIImageView!
     @IBOutlet weak var subjectDesc: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -75,6 +75,13 @@ class TableViewController: UITableViewController {
         return cell
     }
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let questionView = QuestionViewController()
+        questionView.subjectChosen = subjects[indexPath.row]
+        performSegue(withIdentifier: "S2Q", sender: self)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
