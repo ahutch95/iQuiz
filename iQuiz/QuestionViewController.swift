@@ -11,6 +11,7 @@ import UIKit
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var questionText: UILabel!
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var answerA: UIButton!
     @IBOutlet weak var answerB: UIButton!
     @IBOutlet weak var answerC: UIButton!
@@ -42,15 +43,14 @@ class QuestionViewController: UIViewController {
         answerC.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         answerD.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         sender.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        currentGame.guess = sender.titleLabel?.text
+        currentGame.guess = sender.titleLabel!.text
         currentGame.buttonSelected = sender
     }
 
     @IBAction func submitChoice(_ sender: UIButton) {
-        if currentGame.guess! == (currentGame.question?.answers[(currentGame.question?.answer)!])! {
+        if currentGame.guess == currentGame.question!.answerText {
             currentGame.correct = true
         }
-        
         performSegue(withIdentifier: "Q2A", sender: self)
     }
     /*

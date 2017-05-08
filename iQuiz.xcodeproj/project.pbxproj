@@ -18,7 +18,8 @@
 		401135FD1EB6F3F4004A1B36 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401135FC1EB6F3F4004A1B36 /* Subject.swift */; };
 		401135FF1EB6F53B004A1B36 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401135FE1EB6F53B004A1B36 /* TableViewController.swift */; };
 		40625D7D1EBD34A400AC704C /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40625D7C1EBD34A400AC704C /* QuestionViewController.swift */; };
-		40625D7F1EBD3E1F00AC704C /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40625D7E1EBD3E1F00AC704C /* AnswerViewController.swift */; };
+		40E84A7A1EC025CC0083E70A /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40625D7E1EBD3E1F00AC704C /* AnswerViewController.swift */; };
+		40E84A7C1EC03A810083E70A /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E84A7B1EC03A810083E70A /* FinishedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		401135FE1EB6F53B004A1B36 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		40625D7C1EBD34A400AC704C /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		40625D7E1EBD3E1F00AC704C /* AnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		40E84A7B1EC03A810083E70A /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				401135F91EB6EF9B004A1B36 /* SubjectTableViewCell.swift */,
 				40625D7C1EBD34A400AC704C /* QuestionViewController.swift */,
 				40625D7E1EBD3E1F00AC704C /* AnswerViewController.swift */,
+				40E84A7B1EC03A810083E70A /* FinishedViewController.swift */,
 				401135CF1EB6ED20004A1B36 /* Main.storyboard */,
 				401135D21EB6ED20004A1B36 /* Assets.xcassets */,
 				401135D41EB6ED20004A1B36 /* LaunchScreen.storyboard */,
@@ -275,8 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E84A7C1EC03A810083E70A /* FinishedViewController.swift in Sources */,
 				401135FD1EB6F3F4004A1B36 /* Subject.swift in Sources */,
-				40625D7F1EBD3E1F00AC704C /* AnswerViewController.swift in Sources */,
+				40E84A7A1EC025CC0083E70A /* AnswerViewController.swift in Sources */,
 				401135CE1EB6ED20004A1B36 /* ViewController.swift in Sources */,
 				40625D7D1EBD34A400AC704C /* QuestionViewController.swift in Sources */,
 				401135FB1EB6EFBF004A1B36 /* SubjectTableViewCell.swift in Sources */,

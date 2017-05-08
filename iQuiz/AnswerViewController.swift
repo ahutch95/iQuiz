@@ -10,38 +10,56 @@ import UIKit
 
 class AnswerViewController: UIViewController {
 
+    @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var answerA: UIButton!
     @IBOutlet weak var answerB: UIButton!
     @IBOutlet weak var answerC: UIButton!
     @IBOutlet weak var answerD: UIButton!
     @IBOutlet weak var outcome: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     var answerSelected: UIButton!
     var correctAnswer: String = ""
+    var subjectChosen: Subject!
+    var questionCount: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionText.text = currentGame.question!.text
+        answerA.setTitle( currentGame.question!.answers[0], for: .normal)
+        answerB.setTitle( currentGame.question!.answers[1], for: .normal)
+        answerC.setTitle( currentGame.question!.answers[2], for: .normal)
+        answerD.setTitle( currentGame.question!.answers[3], for: .normal)
         if currentGame.correct {
             outcome.text = "Correct!"
             currentGame.buttonSelected.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            currentGame.score += 1
         } else {
-            if answerA.titleLabel?.text ==  (currentGame.question?.answers[(currentGame.question?.answer)!])!{
-                answerA.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            } else if answerB.titleLabel?.text ==  (currentGame.question?.answers[(currentGame.question?.answer)!])!{
-                answerB.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            } else if answerC.titleLabel?.text ==  (currentGame.question?.answers[(currentGame.question?.answer)!])!{
-                answerC.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            } else {
-                answerD.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            }
             outcome.text = "Wrong!"
-            currentGame.buttonSelected.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         }
+        if answerA.titleLabel?.text == currentGame.question!.answerText {
+            answerA.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else if answerB.titleLabel?.text == currentGame.question!.answerText {
+            answerB.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else if answerC.titleLabel?.text == currentGame.question!.answerText {
+            answerC.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else {
+            answerD.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        }
+        questionCount += 1
+        currentGame.gamesPlayed += 1
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func nextPage(_ sender: UIButton) {
+        if currentGame.gamesPlayed < (currentGame.subject?.questions?.count)! {
+            performSegue(withIdentifier: "AB2Q", sender: self)
+        } else {
+            performSegue(withIdentifier: "A2EoG", sender: self)
+        }
     }
     
 
@@ -54,5 +72,4 @@ class AnswerViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

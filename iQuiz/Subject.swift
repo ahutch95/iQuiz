@@ -32,11 +32,13 @@ class question {
     var text: String
     var answer: Int
     var answers: [String]
+    var answerText: String
     
     init(_ text: String,_ answer: Int,_ answers:[String]) {
         self.text = text
         self.answer = answer
         self.answers = answers
+        self.answerText = answers[answer-1]
     }
 }
 
@@ -46,6 +48,8 @@ struct currentGame{
     static var guess: String? = ""
     static var correct: Bool = false
     static var buttonSelected: UIButton!
+    static var score = 0
+    static var gamesPlayed = 0
 /*
     init(_ subject: Subject,_ question: question,_ guess: String?) {
         self.subject = subject
