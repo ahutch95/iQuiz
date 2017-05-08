@@ -40,7 +40,9 @@ class QuestionViewController: UIViewController {
     }
 
     @IBAction func submitChoice(_ sender: UIButton) {
-        
+        let guess = AnswerViewController()
+        guess.answerSelected = answerSelected
+        performSegue(withIdentifier: "Q2A", sender: self)
     }
     /*
     // MARK: - Navigation

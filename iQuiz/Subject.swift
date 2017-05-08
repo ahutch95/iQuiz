@@ -45,6 +45,36 @@ class Node {
     }
 }
 
-//class Mathematics {
- //   var questions:Node
-//}
+class MathematicsList {
+    var questions: Node
+    
+    init(_ node: Node) {
+        questions = node
+    }
+    func update(_ node: Node) {
+        node.next = questions
+        questions = node
+    }
+}
+class MarvelList {
+    var questions: Node
+    
+    init(_ node: Node) {
+        questions = node
+    }
+    func update(_ node: Node) {
+        node.next = questions
+        questions = node
+    }
+}
+class ScienceList {
+    var questions: Node
+    
+    init(_ node: Node) {
+        questions = node
+    }
+    func update(_ node: Node) {
+        node.next = questions
+        questions = node
+    }
+}
