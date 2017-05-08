@@ -42,9 +42,12 @@ class TableViewController: UITableViewController {
         let subImg2 = UIImage(named: "Marvel")
         let subImg3 = UIImage(named: "Science")
         
-        let sub1 = Subject("Mathematics", subImg1!, "Quizzes about Mathematics")
-        let sub2 = Subject("Marvel", subImg2!, "Quizzes about Marvel Comics")
-        let sub3 = Subject("Science", subImg3!, "Quizzes about Science")
+        let mQ1 = question("Who is Iron Man?", 1, ["Tony Stark","Obadiah Stane","A rock hit by Megadeth","Nobody knows"])
+        
+        let m = [mQ1]
+        let sub1 = Subject("Mathematics", subImg1!, "Quizzes about Mathematics", nil)
+        let sub2 = Subject("Marvel", subImg2!, "Quizzes about Marvel Comics", m)
+        let sub3 = Subject("Science", subImg3!, "Quizzes about Science", nil)
         
         subjects += [sub1, sub2, sub3]
     }
@@ -70,15 +73,14 @@ class TableViewController: UITableViewController {
         
         cell.subjectTitle.text = cellSubject.title
         cell.subjectImage.image = cellSubject.image
-        cell.subjectDesc.text = cellSubject.description
+        cell.subjectDesc.text = cellSubject.desc
 
         return cell
     }
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let questionView = QuestionViewController()
-        questionView.subjectChosen = subjects[indexPath.row]
+        currentGame.subject = subjects[indexPath.row]
         performSegue(withIdentifier: "S2Q", sender: self)
     }
     

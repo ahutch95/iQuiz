@@ -213,14 +213,14 @@
                                 <rect key="frame" x="42" y="261" width="292" height="266"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wp1-8I-xeV">
-                                        <rect key="frame" x="1" y="1" width="146" height="266"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="266"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdP-0h-aEZ">
-                                                <rect key="frame" x="1" y="1" width="146" height="133"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="133"/>
                                                 <state key="normal" title="A butt"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhU-Hp-bUc">
-                                                <rect key="frame" x="1" y="134" width="146" height="133"/>
+                                                <rect key="frame" x="0.0" y="133" width="146" height="133"/>
                                                 <state key="normal" title="C butt"/>
                                             </button>
                                         </subviews>
@@ -229,14 +229,14 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nZr-UC-wn1">
-                                        <rect key="frame" x="147" y="1" width="146" height="266"/>
+                                        <rect key="frame" x="146" y="0.0" width="146" height="266"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fnz-8y-ygg">
-                                                <rect key="frame" x="0.0" y="1" width="146" height="133"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="133"/>
                                                 <state key="normal" title="B butt"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1G-df-XQs">
-                                                <rect key="frame" x="0.0" y="134" width="146" height="133"/>
+                                                <rect key="frame" x="0.0" y="133" width="146" height="133"/>
                                                 <state key="normal" title="D butt"/>
                                             </button>
                                         </subviews>
@@ -250,9 +250,15 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzb-HK-Sn2">
-                                <rect key="frame" x="163" y="629" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
+                                <rect key="frame" x="139" y="629" width="98" height="30"/>
+                                <state key="normal" title="Next Question"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Correct?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0Z-R2-Nz4">
+                                <rect key="frame" x="167" y="89" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -265,6 +271,7 @@
                             <constraint firstItem="ZtX-MG-lsJ" firstAttribute="width" secondItem="UAK-zg-fZG" secondAttribute="width" multiplier="7/9" id="eim-UR-gpT"/>
                             <constraint firstItem="Pqi-Mf-8wA" firstAttribute="height" secondItem="UAK-zg-fZG" secondAttribute="height" multiplier="2/5" id="gzw-pL-c7I"/>
                             <constraint firstItem="Pqi-Mf-8wA" firstAttribute="centerX" secondItem="UAK-zg-fZG" secondAttribute="centerX" id="jgP-3g-SOD"/>
+                            <constraint firstItem="X0Z-R2-Nz4" firstAttribute="top" secondItem="ZtX-MG-lsJ" secondAttribute="bottom" constant="5" id="vMN-vU-CxB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -272,6 +279,7 @@
                         <outlet property="answerB" destination="Fnz-8y-ygg" id="PZj-7V-zfZ"/>
                         <outlet property="answerC" destination="OhU-Hp-bUc" id="pdG-xi-6qK"/>
                         <outlet property="answerD" destination="h1G-df-XQs" id="G13-dO-ya3"/>
+                        <outlet property="outcome" destination="X0Z-R2-Nz4" id="Ieg-ro-Zlt"/>
                         <outlet property="questionText" destination="ZtX-MG-lsJ" id="oov-HG-061"/>
                     </connections>
                 </viewController>

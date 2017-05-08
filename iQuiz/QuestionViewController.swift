@@ -16,12 +16,18 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerC: UIButton!
     @IBOutlet weak var answerD: UIButton!
     var subjectChosen: Subject!
-    var questionNode: Node!
-    var answerSelected: UIButton!
+    var questionCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        subjectChosen = currentGame.subject
+        questionText.text = subjectChosen.questions![questionCount].text
+        answerA.setTitle( subjectChosen.questions![questionCount].answers[0], for: .normal)
+        answerB.setTitle( subjectChosen.questions![questionCount].answers[1], for: .normal)
+        answerC.setTitle( subjectChosen.questions![questionCount].answers[2], for: .normal)
+        answerD.setTitle( subjectChosen.questions![questionCount].answers[3], for: .normal)
+        currentGame.question = subjectChosen.questions![questionCount]
+        questionCount += 1
         // Do any additional setup after loading the view.
     }
 
@@ -36,12 +42,15 @@ class QuestionViewController: UIViewController {
         answerC.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         answerD.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         sender.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        answerSelected = sender
+        currentGame.guess = sender.titleLabel?.text
+        currentGame.buttonSelected = sender
     }
 
     @IBAction func submitChoice(_ sender: UIButton) {
-        let guess = AnswerViewController()
-        guess.answerSelected = answerSelected
+        if currentGame.guess! == (currentGame.question?.answers[(currentGame.question?.answer)!])! {
+            currentGame.correct = true
+        }
+        
         performSegue(withIdentifier: "Q2A", sender: self)
     }
     /*

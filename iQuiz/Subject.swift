@@ -11,70 +11,48 @@ import UIKit
 class Subject {
     var title: String
     var image: UIImage
-    var description: String
+    var desc: String
+    var questions:[question]?
     
-    init(_ title: String,_ image: UIImage,_ description: String) {
+    init(_ title: String,_ image: UIImage,_ desc: String,_ questions: [question]?) {
         self.title = title
         self.image = image
-        self.description = description
+        self.desc = desc
+        self.questions = questions
+    }
+//    init(_ title: String,_ image: UIImage,_ desc: String) {
+//        self.title = title
+//        self.image = image
+//        self.desc = desc
+//    }
+}
+
+class question {
+    
+    var text: String
+    var answer: Int
+    var answers: [String]
+    
+    init(_ text: String,_ answer: Int,_ answers:[String]) {
+        self.text = text
+        self.answer = answer
+        self.answers = answers
     }
 }
 
-class Node {
-    var question: String
-    var next: Node?
-    var wrong1: String
-    var wrong2: String
-    var wrong3: String
-    var correct: String
-    
-    init(_ question: String,_ wrong1: String,_ wrong2: String,_ wrong3: String,_ correct: String) {
+struct currentGame{
+    static var subject: Subject? = nil
+    static var question: question? = nil
+    static var guess: String? = ""
+    static var correct: Bool = false
+    static var buttonSelected: UIButton!
+/*
+    init(_ subject: Subject,_ question: question,_ guess: String?) {
+        self.subject = subject
         self.question = question
-        self.wrong1 = wrong1
-        self.wrong2 = wrong2
-        self.wrong3 = wrong3
-        self.correct = correct
+        self.guess = guess
     }
-    init(_ question: String,_ wrong1: String,_ wrong2: String,_ wrong3: String,_ correct: String,_ next: Node) {
-        self.question = question
-        self.wrong1 = wrong1
-        self.wrong2 = wrong2
-        self.wrong3 = wrong3
-        self.correct = correct
-        self.next = next
-    }
-}
-
-class MathematicsList {
-    var questions: Node
-    
-    init(_ node: Node) {
-        questions = node
-    }
-    func update(_ node: Node) {
-        node.next = questions
-        questions = node
-    }
-}
-class MarvelList {
-    var questions: Node
-    
-    init(_ node: Node) {
-        questions = node
-    }
-    func update(_ node: Node) {
-        node.next = questions
-        questions = node
-    }
-}
-class ScienceList {
-    var questions: Node
-    
-    init(_ node: Node) {
-        questions = node
-    }
-    func update(_ node: Node) {
-        node.next = questions
-        questions = node
-    }
+    func isCorrect() -> Bool {
+        return question.answers[question.answer] == guess!
+    }*/
 }
