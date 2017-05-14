@@ -11,16 +11,19 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    var subjects = [Subject]()
+    var subjectOptions = [Subject]()
     var images = [UIImage(named: "Science"), UIImage(named: "Marvel"), UIImage(named: "Mathematics")]
     
     
     override func viewDidLoad() {
+        getJson()
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
 
-        getJson()
-        self.tableView.reloadData()
+        
+        //self.tableView.reloadData()
+        //loadSubjects()
+        print(subjectOptions.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +40,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return subjects.count
+        return subjectOptions.count
     }
 
     func getJson() {
@@ -63,30 +66,32 @@ class TableViewController: UITableViewController {
                         let aQuestion = question(text, Int(answerInt)!, choices)
                         genQuestion.append(aQuestion)
                     }
-                    self.subjects.append(Subject(title, desc, genQuestion))
-                    
+                    self.subjectOptions.append(Subject(title, desc, genQuestion))
+                    print(self.subjectOptions.count)
                 }
             } catch {
                 print("Error Response! \n\(error)")
             }
         }
         task.resume()
+        print(subjectOptions.count)
+        self.tableView.reloadData()
     }
     
-//    func loadSubjects() {
-//        let subImg1 = UIImage(named: "Mathematics")
-//        let subImg2 = UIImage(named: "Marvel")
-//        let subImg3 = UIImage(named: "Science")
-//        
-//        let mQ1 = question("Who is Iron Man?", 1, ["Tony Stark","Obadiah Stane","A rock hit by Megadeth","Nobody knows"])
-//        
-//        let m = [mQ1]
-//        let sub1 = Subject("Mathematics", subImg1!, "Quizzes about Mathematics", nil)
-//        let sub2 = Subject("Marvel", subImg2!, "Quizzes about Marvel Comics", m)
-//        let sub3 = Subject("Science", subImg3!, "Quizzes about Science", nil)
-//        
-//        subjects += [sub1, sub2, sub3]
-//    }
+    func loadSubjects() {
+        let subImg1 = UIImage(named: "Mathematics")
+        let subImg2 = UIImage(named: "Marvel")
+        let subImg3 = UIImage(named: "Science")
+        
+        let mQ1 = question("Who is Iron Man?", 1, ["Tony Stark","Obadiah Stane","A rock hit by Megadeth","Nobody knows"])
+        
+        let m = [mQ1]
+        let sub1 = Subject("Mathematics", "Quizzes about Mathematics", m)
+        let sub2 = Subject("Marvel", "Quizzes about Marvel Comics", m)
+        let sub3 = Subject("Science", "Quizzes about Science", m)
+        
+        subjectOptions += [sub1, sub2, sub3]
+    }
 
     @IBAction func settingsButton(_ sender: Any) {
         
@@ -121,7 +126,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectTableViewCell", for: indexPath) as! SubjectTableViewCell
 
         // Configure the cell...
-        let cellSubject = subjects[indexPath.row]
+        let cellSubject = subjectOptions[indexPath.row]
         
         cell.subjectTitle.text = cellSubject.title
         cell.subjectImage.image = images[indexPath.row]
@@ -132,7 +137,7 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentGame.subject = subjects[indexPath.row]
+        currentGame.subject = subjectOptions[indexPath.row]
         performSegue(withIdentifier: "S2Q", sender: self)
     }
     
