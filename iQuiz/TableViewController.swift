@@ -12,14 +12,15 @@ import UIKit
 class TableViewController: UITableViewController {
 
     var subjects = [Subject]()
-    
+    var images = [UIImage(named: "Science"), UIImage(named: "Marvel"), UIImage(named: "Mathematics")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
 
-        startSession()
+        getJson()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,30 +40,39 @@ class TableViewController: UITableViewController {
         return subjects.count
     }
 
-    func startSession() {
-        let requestURL: NSURL = NSURL(string: link.jsonURL)!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest) {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                do{
+    func getJson() {
+        let task = URLSession.shared.dataTask(with: URL(string: link.jsonURL)!) { (data, response, error) -> Void in
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                
+                
+                guard let subjects = json as? [[String : Any]] else {return}
+                
+                
+                for s in subjects{
+                    let title = s["title"] as! String
+                    print(title)
+                    let desc = s["desc"] as! String
+                    var genQuestion : [question] = []
+                    let questions = s["questions"]
+                    for q in questions as! [[String:Any]]{
+                        let text = q["text"] as! String
+                        let answerInt = q["answer"] as! String
+                        let choices = q["answers"] as! [String]
+                        
+                        let aQuestion = question(text, Int(answerInt)!, choices)
+                        genQuestion.append(aQuestion)
+                    }
+                    self.subjects.append(Subject(title, desc, genQuestion))
                     
-                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
-                    
-                    
-                }catch {
-                    print("Error with Json: \(error)")
-                }            }
+                }
+            } catch {
+                print("Error Response! \n\(error)")
+            }
         }
-        
         task.resume()
     }
-        
+    
 //    func loadSubjects() {
 //        let subImg1 = UIImage(named: "Mathematics")
 //        let subImg2 = UIImage(named: "Marvel")
@@ -114,7 +124,7 @@ class TableViewController: UITableViewController {
         let cellSubject = subjects[indexPath.row]
         
         cell.subjectTitle.text = cellSubject.title
-        cell.subjectImage.image = cellSubject.image
+        cell.subjectImage.image = images[indexPath.row]
         cell.subjectDesc.text = cellSubject.desc
 
         return cell

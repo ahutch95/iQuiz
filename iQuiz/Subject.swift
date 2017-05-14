@@ -10,21 +10,14 @@ import UIKit
 
 class Subject {
     var title: String
-    var image: UIImage
     var desc: String
     var questions:[question]?
     
-    init(_ title: String,_ image: UIImage,_ desc: String,_ questions: [question]?) {
+    init(_ title: String,_ desc: String,_ questions: [question]) {
         self.title = title
-        self.image = image
         self.desc = desc
         self.questions = questions
     }
-//    init(_ title: String,_ image: UIImage,_ desc: String) {
-//        self.title = title
-//        self.image = image
-//        self.desc = desc
-//    }
 }
 
 class question {
