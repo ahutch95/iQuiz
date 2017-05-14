@@ -13,11 +13,13 @@ class TableViewController: UITableViewController {
 
     var subjects = [Subject]()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
 
-        loadSubjects()
+        startSession()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,32 +39,72 @@ class TableViewController: UITableViewController {
         return subjects.count
     }
 
-    func loadSubjects() {
-        let subImg1 = UIImage(named: "Mathematics")
-        let subImg2 = UIImage(named: "Marvel")
-        let subImg3 = UIImage(named: "Science")
+    func startSession() {
+        let requestURL: NSURL = NSURL(string: link.jsonURL)!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                do{
+                    
+                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments)
+                    
+                    
+                }catch {
+                    print("Error with Json: \(error)")
+                }            }
+        }
         
-        let mQ1 = question("Who is Iron Man?", 1, ["Tony Stark","Obadiah Stane","A rock hit by Megadeth","Nobody knows"])
-        
-        let m = [mQ1]
-        let sub1 = Subject("Mathematics", subImg1!, "Quizzes about Mathematics", nil)
-        let sub2 = Subject("Marvel", subImg2!, "Quizzes about Marvel Comics", m)
-        let sub3 = Subject("Science", subImg3!, "Quizzes about Science", nil)
-        
-        subjects += [sub1, sub2, sub3]
+        task.resume()
     }
+        
+//    func loadSubjects() {
+//        let subImg1 = UIImage(named: "Mathematics")
+//        let subImg2 = UIImage(named: "Marvel")
+//        let subImg3 = UIImage(named: "Science")
+//        
+//        let mQ1 = question("Who is Iron Man?", 1, ["Tony Stark","Obadiah Stane","A rock hit by Megadeth","Nobody knows"])
+//        
+//        let m = [mQ1]
+//        let sub1 = Subject("Mathematics", subImg1!, "Quizzes about Mathematics", nil)
+//        let sub2 = Subject("Marvel", subImg2!, "Quizzes about Marvel Comics", m)
+//        let sub3 = Subject("Science", subImg3!, "Quizzes about Science", nil)
+//        
+//        subjects += [sub1, sub2, sub3]
+//    }
 
     @IBAction func settingsButton(_ sender: Any) {
-        let settingsAlert = UIAlertController(title: "Settings", message: "Settings go here.", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-        }
-        settingsAlert.addAction(cancelAction)
         
-        let OKAction = UIAlertAction(title: "OK", style: .default) { action in
-        }
-        settingsAlert.addAction(OKAction)
+        let alertController : UIAlertController = UIAlertController(title: "Alert!", message: "Settings go here.", preferredStyle: .alert)
+        let okAction : UIAlertAction = UIAlertAction(title: "Okay", style: .default, handler: nil )
         
-        self.present(settingsAlert, animated: true) {
+        alertController.addAction(okAction)
+        
+        alertController.addTextField{ (textField: UITextField!) -> Void in
+            textField.placeholder = "New JSON link"
+        }
+        
+        let retrieveAction : UIAlertAction = UIAlertAction(title: "Check Now", style: .cancel, handler: {[weak self]
+            (paramAction:UIAlertAction!) in
+            if let textFields = alertController.textFields {
+                let theTextFields = textFields as [UITextField]
+                let enteredText = theTextFields[0].text
+                if enteredText != nil {
+                    link.jsonURL = enteredText!
+                } else {
+                    link.jsonURL = "http://tednewardsandbox.site44.com/questions.json"
+                }
+                self!.tableView.reloadData()
+            }
+        })
+        
+        alertController.addAction(retrieveAction)
+        self.present(alertController, animated: true) {
         }
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

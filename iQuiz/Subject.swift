@@ -50,13 +50,10 @@ struct currentGame{
     static var buttonSelected: UIButton!
     static var score = 0
     static var gamesPlayed = 0
-/*
-    init(_ subject: Subject,_ question: question,_ guess: String?) {
-        self.subject = subject
-        self.question = question
-        self.guess = guess
-    }
-    func isCorrect() -> Bool {
-        return question.answers[question.answer] == guess!
-    }*/
+}
+struct link{
+    static var jsonURL = "http://tednewardsandbox.site44.com/questions.json"
+}
+struct subjectArray {
+    static var subs = [Subject]()
 }
