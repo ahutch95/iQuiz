@@ -43,6 +43,7 @@ struct currentGame{
     static var buttonSelected: UIButton!
     static var score = 0
     static var gamesPlayed = 0
+    static var qCount = 0
 }
 struct link{
     static var jsonURL = "http://tednewardsandbox.site44.com/questions.json"

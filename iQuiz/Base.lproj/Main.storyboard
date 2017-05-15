@@ -111,14 +111,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M5m-xS-gkU">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="266"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NR-Kn-YpJ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9NR-Kn-YpJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="146" height="133"/>
                                                 <state key="normal" title="A butt"/>
                                                 <connections>
                                                     <action selector="buttonSelected:" destination="BA7-FL-EQr" eventType="touchUpInside" id="pQx-vK-36v"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGP-BC-zdC">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WGP-BC-zdC">
                                                 <rect key="frame" x="0.0" y="133" width="146" height="133"/>
                                                 <state key="normal" title="C butt"/>
                                                 <connections>
@@ -133,14 +133,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yaM-iM-bBx">
                                         <rect key="frame" x="146" y="0.0" width="146" height="266"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YuL-ur-2aZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YuL-ur-2aZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="146" height="133"/>
                                                 <state key="normal" title="B butt"/>
                                                 <connections>
                                                     <action selector="buttonSelected:" destination="BA7-FL-EQr" eventType="touchUpInside" id="vDy-jk-Egr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68I-kR-WkB">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="68I-kR-WkB">
                                                 <rect key="frame" x="0.0" y="133" width="146" height="133"/>
                                                 <state key="normal" title="D butt"/>
                                                 <connections>
@@ -205,13 +205,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S24-4W-RLy">
-                                <rect key="frame" x="41" y="41" width="292" height="21"/>
+                                <rect key="frame" x="41" y="41" width="292" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GT-yv-HSu">
-                                <rect key="frame" x="-1" y="72" width="376" height="21"/>
+                                <rect key="frame" x="-0.5" y="71.5" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -229,15 +229,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cIb-Is-IjY">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="267"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-XP-OEe">
-                                                <rect key="frame" x="0.0" y="0.0" width="146" height="134"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-XP-OEe">
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="133.5"/>
                                                 <state key="normal" title="A butt"/>
                                                 <connections>
                                                     <action selector="buttonSelected:" destination="BA7-FL-EQr" eventType="touchUpInside" id="OJU-F6-v96"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-z3-aJI">
-                                                <rect key="frame" x="0.0" y="134" width="146" height="133"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-z3-aJI">
+                                                <rect key="frame" x="0.0" y="133.5" width="146" height="133.5"/>
                                                 <state key="normal" title="C butt"/>
                                                 <connections>
                                                     <action selector="buttonSelected:" destination="BA7-FL-EQr" eventType="touchUpInside" id="lYt-NY-gJg"/>
@@ -251,15 +251,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H2s-nS-vvg">
                                         <rect key="frame" x="146" y="0.0" width="146" height="267"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeZ-9J-8hB">
-                                                <rect key="frame" x="0.0" y="0.0" width="146" height="134"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SeZ-9J-8hB">
+                                                <rect key="frame" x="0.0" y="0.0" width="146" height="133.5"/>
                                                 <state key="normal" title="B butt"/>
                                                 <connections>
                                                     <action selector="buttonSelected:" destination="BA7-FL-EQr" eventType="touchUpInside" id="Kh4-uA-Z2m"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpW-YM-fxH">
-                                                <rect key="frame" x="0.0" y="134" width="146" height="133"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PpW-YM-fxH">
+                                                <rect key="frame" x="0.0" y="133.5" width="146" height="133.5"/>
                                                 <state key="normal" title="D butt"/>
                                                 <connections>
                                                     <action selector="buttonSelected:" destination="BA7-FL-EQr" eventType="touchUpInside" id="ZkY-dz-ZdN"/>
@@ -380,6 +380,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HZq-ND-9ki"/>
+        <segue reference="q3g-BF-HJo"/>
     </inferredMetricsTieBreakers>
 </document>

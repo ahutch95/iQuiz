@@ -13,13 +13,20 @@ class TableViewController: UITableViewController {
 
     var subjectOptions = [Subject]()
     var images = [UIImage(named: "Science"), UIImage(named: "Marvel"), UIImage(named: "Mathematics")]
-    
+    var firstLoad = true
     
     override func viewDidLoad() {
-        getJson()
+        if firstLoad {getJson()}
+        firstLoad = false
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
-
+        currentGame.subject = nil
+        currentGame.question = nil
+        currentGame.guess = ""
+        currentGame.correct = false
+        currentGame.score = 0
+        currentGame.gamesPlayed = 0
+        currentGame.qCount = 0
         
         //self.tableView.reloadData()
         //loadSubjects()
@@ -72,26 +79,27 @@ class TableViewController: UITableViewController {
             } catch {
                 print("Error Response! \n\(error)")
             }
+            self.tableView.reloadData()
         }
         task.resume()
         print(subjectOptions.count)
-        self.tableView.reloadData()
+
     }
     
-    func loadSubjects() {
-        let subImg1 = UIImage(named: "Mathematics")
-        let subImg2 = UIImage(named: "Marvel")
-        let subImg3 = UIImage(named: "Science")
-        
-        let mQ1 = question("Who is Iron Man?", 1, ["Tony Stark","Obadiah Stane","A rock hit by Megadeth","Nobody knows"])
-        
-        let m = [mQ1]
-        let sub1 = Subject("Mathematics", "Quizzes about Mathematics", m)
-        let sub2 = Subject("Marvel", "Quizzes about Marvel Comics", m)
-        let sub3 = Subject("Science", "Quizzes about Science", m)
-        
-        subjectOptions += [sub1, sub2, sub3]
-    }
+//    func loadSubjects() {
+//        let subImg1 = UIImage(named: "Mathematics")
+//        let subImg2 = UIImage(named: "Marvel")
+//        let subImg3 = UIImage(named: "Science")
+//        
+//        let mQ1 = question("Who is Iron Man?", 1, ["Tony Stark","Obadiah Stane","A rock hit by Megadeth","Nobody knows"])
+//        
+//        let m = [mQ1]
+//        let sub1 = Subject("Mathematics", "Quizzes about Mathematics", m)
+//        let sub2 = Subject("Marvel", "Quizzes about Marvel Comics", m)
+//        let sub3 = Subject("Science", "Quizzes about Science", m)
+//        
+//        subjectOptions += [sub1, sub2, sub3]
+//    }
 
     @IBAction func settingsButton(_ sender: Any) {
         

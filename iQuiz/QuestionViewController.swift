@@ -17,18 +17,17 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerC: UIButton!
     @IBOutlet weak var answerD: UIButton!
     var subjectChosen: Subject!
-    var questionCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         subjectChosen = currentGame.subject
-        questionText.text = subjectChosen.questions![questionCount].text
-        answerA.setTitle( subjectChosen.questions![questionCount].answers[0], for: .normal)
-        answerB.setTitle( subjectChosen.questions![questionCount].answers[1], for: .normal)
-        answerC.setTitle( subjectChosen.questions![questionCount].answers[2], for: .normal)
-        answerD.setTitle( subjectChosen.questions![questionCount].answers[3], for: .normal)
-        currentGame.question = subjectChosen.questions![questionCount]
-        questionCount += 1
+        questionText.text = subjectChosen.questions![currentGame.qCount].text
+        answerA.setTitle( subjectChosen.questions![currentGame.qCount].answers[0], for: .normal)
+        answerB.setTitle( subjectChosen.questions![currentGame.qCount].answers[1], for: .normal)
+        answerC.setTitle( subjectChosen.questions![currentGame.qCount].answers[2], for: .normal)
+        answerD.setTitle( subjectChosen.questions![currentGame.qCount].answers[3], for: .normal)
+        currentGame.question = subjectChosen.questions![currentGame.qCount]
+        currentGame.qCount += 1
         // Do any additional setup after loading the view.
     }
 
